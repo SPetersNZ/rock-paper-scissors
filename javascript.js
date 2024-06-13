@@ -4,28 +4,41 @@ let computerScore = 0;
 function getComputerChoice() {
     const minCeiled = Math.ceil(1);
     const maxFloored = Math.floor(3);
-    let computerRoll = Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
-    String.valueOf(computerRoll);
-    if (computerRoll == 1) {
-        computerRoll = "rock";
-    } else if (computerRoll == 2) {
-        computerRoll = "paper";
-    } else if (computerRoll == 3) {
-        computerRoll = "scissors";
+    let computerChoice = Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+    String.valueOf(computerChoice);
+    if (computerChoice == 1) {
+        computerChoice = "rock";
+    } else if (computerChoice == 2) {
+        computerChoice = "paper";
+    } else if (computerChoice == 3) {
+        computerChoice = "scissors";
    }
-   return computerRoll;
+   return computerChoice;
 }
 
 function getHumanChoice() {
-    const userInput = prompt("Enter 'Rock, Paper, or Scissors'");
-    return userInput;
+    const humanChoice = prompt("Enter 'Rock, Paper, or Scissors'");
+    return humanChoice;
+}
+
+function playGame(numOfRounds) {
+    for (let i = 0; i < numOfRounds; i++) {
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+        playRound(computerSelection, humanSelection);
+    }
+    if (humanScore > computerScore) {
+        console.log("Congrats! You win the game with a score of " + humanScore + " to " + computerScore);
+    } else {
+        console.log("You lost the game! The score was " + computerScore + " to " + humanScore);
+    }
 }
 
 function playRound(computerSelection, humanSelection) {
     const humanSelectionSanitized = humanSelection.toLowerCase();
     if (humanSelectionSanitized == computerSelection) {
         console.log("Both players have chosen " + computerSelection + "! It's a tie!");
-        return;
+        return
     }
     if (humanSelectionSanitized == "rock") {
         if (computerSelection == "paper") {
@@ -54,9 +67,8 @@ function playRound(computerSelection, humanSelection) {
             humanScore++;
         }
     }
+    return humanScore;
+    return computerScore;
 }
 
-const computerSelection = getComputerChoice();
-const humanSelection = getHumanChoice();
-
-playRound(computerSelection, humanSelection);
+playGame(5);
