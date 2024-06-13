@@ -1,0 +1,30 @@
+PlayRound() {
+1. bring in computer choice
+2. bring in human choice
+3. sanitise human choice so that it can be read by input
+4. convert human input to 1, 2 or 3 - OR COMPARE STRINGS?
+5. compare human choice to computer choice
+6. console.log winning or losing message 
+	ensure ‘Paper beats rock!’ is dynamic, i.e. 7. computerChoice(1) beats humanChoice(2)
+7. increment humanScore or computerScore based on who won
+	e.g. humanScore++
+
+
+1 = rock
+2 = paper
+3 = scissors
+
+
+paper beats rock		2 beats 1	2 > 1	diff of 1
+paper loses to scissors		2 loses 3	3 > 2	diff of 1
+rock beats scissors		1 beats 3		diff of 2
+rock loses to paper		1 loses 2	2 > 1	diff of 1
+scissors beat paper		3 beats 2	3 > 2	diff of 1
+scissors lose to rock		3 loses	1		diff of 2
+
+
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+                              1   2 3
+
+
+if humanchoice == 1 || humanchoice == 3 && computerchoice == 1 || computerchoice == 3
