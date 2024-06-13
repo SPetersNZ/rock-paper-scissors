@@ -27,7 +27,9 @@ function playGame(numOfRounds) {
         const computerSelection = getComputerChoice();
         playRound(computerSelection, humanSelection);
     }
-    if (humanScore > computerScore) {
+    if (humanScore == computerScore) {
+        console.log("It's a tie for the game! The score was " + humanScore + " each");
+    } else if (humanScore > computerScore) {
         console.log("Congrats! You win the game with a score of " + humanScore + " to " + computerScore);
     } else {
         console.log("You lost the game! The score was " + computerScore + " to " + humanScore);
@@ -38,9 +40,7 @@ function playRound(computerSelection, humanSelection) {
     const humanSelectionSanitized = humanSelection.toLowerCase();
     if (humanSelectionSanitized == computerSelection) {
         console.log("Both players have chosen " + computerSelection + "! It's a tie!");
-        return
-    }
-    if (humanSelectionSanitized == "rock") {
+    } else if (humanSelectionSanitized == "rock") {
         if (computerSelection == "paper") {
             console.log("You lose! " + computerSelection + " beats " + humanSelection);
             computerScore++;
@@ -48,8 +48,7 @@ function playRound(computerSelection, humanSelection) {
             console.log("You win! " + humanSelection + " beats " + computerSelection);
             humanScore++;
         }
-    }
-    if (humanSelectionSanitized == "paper") {
+    } else if (humanSelectionSanitized == "paper") {
         if (computerSelection == "scissors") {
             console.log("You lose! " + computerSelection + " beats " + humanSelection);
             computerScore++;
@@ -57,8 +56,7 @@ function playRound(computerSelection, humanSelection) {
             console.log("You win! " + humanSelection + " beats " + computerSelection);
             humanScore++;
         }
-    }
-    if (humanSelection == "scissors") {
+    } else if (humanSelection == "scissors") {
         if (computerSelection == "rock") {
             console.log("You lose! " + computerSelection + " beats " + humanSelection);
             computerScore++;
@@ -67,8 +65,7 @@ function playRound(computerSelection, humanSelection) {
             humanScore++;
         }
     }
-    return humanScore;
-    return computerScore;
+    return humanScore, computerScore;
 }
 
 playGame(5);
