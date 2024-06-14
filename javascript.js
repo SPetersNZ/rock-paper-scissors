@@ -2,11 +2,12 @@ let humanScore = 0;
 let computerScore = 0;
 
 function getComputerChoice() {
-    const minCeiled = Math.ceil(1);
-    const maxFloored = Math.floor(3);
+    //Return min possible number to map to rock, paper, scissors
+    const minRoll = Math.ceil(1);
+    //Return max possible number to map to rock, paper, scissors
+    const maxRoll = Math.floor(3);
     let computerChoice = Math.floor(Math.random() 
-    * (maxFloored - minCeiled + 1) + minCeiled);
-    String.valueOf(computerChoice);
+    * (maxRoll - minRoll + 1) + minRoll);
     if (computerChoice == 1) {
         computerChoice = "rock";
     } else if (computerChoice == 2) {
@@ -65,7 +66,7 @@ function playRound(computerSelection, humanSelection) {
             computerSelection);
             humanScore++;
         }
-    } else if (humanSelection == "scissors") {
+    } else if (humanSelectionSanitized == "scissors") {
         if (computerSelection == "rock") {
             console.log("You lose! " + computerSelection + " beats " + 
             humanSelection);
