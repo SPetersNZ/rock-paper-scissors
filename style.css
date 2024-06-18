@@ -1,0 +1,6 @@
+.playerButtons {
+    display: flex;
+    justify-content: center;
+    padding: 200px;
+    gap: 50px;
+}
