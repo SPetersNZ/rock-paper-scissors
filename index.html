@@ -11,19 +11,48 @@
         <h2>A game of Rock, Paper, Scissors</h2>
     </div>
     <div class="gameMatchUpdate">
-        <!--Make your choice-->
-        <!--First to score 5 points wins the game-->
-
-        <!--You won!-->
-        <!--Rock beats scissors-->
+        <div id="introText">
+            <span id="introTextHeading">
+                Make your first choice
+            </span>
+            <span id="introTextBody">
+                First to 5 points wins - good luck!
+            </span>
+        </div>
     </div>
-    <div class="gameScore">
-        <!--Player: 1--><!--Computer: 0-->
+    <div class="gameScoreBoard">
+        <div id="playerScoreBoard">
+            <div id="playerTextGroup">
+                <div id="playerChoiceContainer">Player chooses: </div>
+                <div id="playerScoreContainer">Player score: </div>
+            </div>
+            <div id="playerDisplayGroup">
+                <div id="playerChoice">?</div>
+                <div id="playerScore">0</div>
+            </div>
+        </div>
+        <div id="computerScoreBoard">
+            <div id="computerTextGroup">
+                <div id="computerChoiceContainer">Computer chooses: </div>
+                <div id="computerScoreContainer">Computer score: </div>
+            </div>
+            <div id="computerDisplayGroup">
+                <div id="computerChoice">?</div>
+                <div id="computerScore">0</div>
+            </div>
+        </div>
     </div>
     <div class="playerButtons">
         <button id="rock">Rock</button>
         <button id="paper">Paper</button>
         <button id="scissors">Scissors</button>
+    </div>
+    <div id="endGameModal" class="modal">
+        <div class="modalContent">
+            <span class="closeButton">&times;</span>
+            <p id="winnerDisplay">--Test--</p>
+            <button id="restartButton">Reset game</button>
+        </div>
     </div>
     <script src="javascript.js"></script>
 </body>
