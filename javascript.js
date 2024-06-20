@@ -4,12 +4,11 @@ const scissorsButton = document.querySelector("#scissors");
 const restartButton = document.querySelector("#restartButton");
 const buttons = document.querySelectorAll("button");
 const endGameModal = document.getElementById("endGameModal");
+const closeButton = document.getElementById("closeButton");
 
 rockButton.addEventListener("click", () => playRound("Rock"));
 paperButton.addEventListener("click", () => playRound("Paper"));
 scissorsButton.addEventListener("click", () => playRound("Scissors"));
-
-//add listener for the close button on the end game modal
 
 let playerScore = 0;
 let computerScore = 0;
@@ -68,6 +67,8 @@ function endGameScoreBoard(playerScore, computerScore) {
     gameWinnerString = gameWinner(playerScore, computerScore);
     document.getElementById("winnerDisplay").innerText = gameWinnerString;
     restartButton.addEventListener("click", () => restartGame());
+    closeButton.addEventListener("click", () => restartGame());
+
     endGameModal.style.display = "block";
 }
 
